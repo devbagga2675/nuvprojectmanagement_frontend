@@ -3,12 +3,12 @@ NUV PMS is a react + laravel project designed and developed to streamline the pr
 To run the application, "PLEASE READ"
 
 --prerequisites
-latest version of node
+latest version of node ( current v20.14.0 )
 
 --Commands to run in your terminal before starting app
 To clone the repo run
 ```bash
-
+git clone https://github.com/devbagga2675/nuvprojectmanagement_frontend.git
 ```
 To install the dependencies, run
 ```bash
@@ -23,4 +23,3 @@ To open local server in browser, run
 localhost:5173/
 ```
 
-T
