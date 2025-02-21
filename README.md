@@ -5,8 +5,22 @@ To run the application, "PLEASE READ"
 --prerequisites
 latest version of node
 
---Commands to run before starting app
+--Commands to run in your terminal before starting app
+To clone the repo run
+```bash
 
-cd "folder name"
-npm install //to install all the dependencies
-npm run dev //to run the app on localserver port 5173
+```
+To install the dependencies, run
+```bash
+npm install
+```
+To start local server instance, run
+```bash
+npm run dev
+```
+To open local server in browser, run
+```bash
+localhost:5173/
+```
+
+T
