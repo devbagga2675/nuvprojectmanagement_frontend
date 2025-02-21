@@ -18,8 +18,8 @@ To start local server instance, run
 ```bash
 npm run dev
 ```
-To open local server in browser, run
-```bash
+To open local server in browser, open url
+```url
 localhost:5173/
 ```
 
