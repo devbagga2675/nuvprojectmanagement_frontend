@@ -1,19 +1,12 @@
-# React + Vite
+NUV PMS is a react + laravel project designed and developed to streamline the process of managing academic projects, and its components including log reports, evaluations, and guide meetings.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
+To run the application, "PLEASE READ"
 
 --prerequisites
 latest version of node
 
 --Commands to run before starting app
 
-cd NUVPMS-frontend 
+cd "folder name"
 npm install //to install all the dependencies
-npm run dev //to run the app on localserver
+npm run dev //to run the app on localserver port 5173
