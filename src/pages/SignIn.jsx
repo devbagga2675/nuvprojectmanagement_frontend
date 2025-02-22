@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles'; // Import theming components
 import { useAuth } from '../context/AuthProvider';
-
+import { ToastContainer } from 'react-toastify';
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
@@ -44,7 +44,7 @@ export default function SignIn() {
   const [passwordError, setPasswordError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
-
+  
   const {login} = useAuth();
 
   const handleSubmit = (event) => {
@@ -70,15 +70,13 @@ export default function SignIn() {
     }
 
     if (isValid) {
-        login()
-        console.log("Form submitted", { email, password });
+        login(email, password);
     }
   };
 
   
   return (
     <> {/* Wrap with ThemeProvider */}
-
       <SignInContainer direction="column" justifyContent="center" alignItems="center"> {/* Centered content */}
         <Card variant="outlined">
           <Typography component="h1" variant="h4" sx={{ mb: 2, textAlign: 'left', fontWeight:'bold',  color: '#444444'}} fullWidth>

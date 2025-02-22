@@ -1,47 +1,50 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const AuthContext = React.createContext();
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+export const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
-    return storedIsLoggedIn === "true" ? true : false;
+    return storedIsLoggedIn === "true"; // Simplified boolean conversion
   });
-  const [user, setUser] = useState(null)
+
   const navigate = useNavigate();
 
-  const login = () => {
-    setIsLoggedIn(true);
-    
-    localStorage.setItem("isLoggedIn", "true");
-    navigate("/homepage");
+  const login = async (email, password) => {
+    try {
+      const response = await axios.post("/api/loginPost", {
+        user_email_address: email,
+        login_password: password,
+      });
+
+      if (response.data.Status === "SUCCESS") {
+        setIsLoggedIn(true);
+        localStorage.setItem("isLoggedIn", "true");
+        navigate("/homepage");
+      } else if (response.status === 404) {
+        console.error("Login failed: Resource not found");
+      } else {
+
+        console.error("Login failed:", response.data);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+
+    }
   };
 
-  const logout = (e) => {
-    
+  const logout = () => { 
     setIsLoggedIn(false);
     localStorage.setItem("isLoggedIn", "false");
     navigate("/signin");
   };
 
-  // useEffect(() => {
-  //   const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
-  //   console.log(storedIsLoggedIn);
-  //   if(storedIsLoggedIn === null || storedIsLoggedIn === "false"){
-  //       navigate('/signin')
-  //   }
-  //   else if(storedIsLoggedIn === "true"){
-  //       navigate('homepage')
-  //   }
-  // }, [isLoggedIn, navigate]);
-
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout, user, setUser }}> {/* Removed user and setUser */}
+    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

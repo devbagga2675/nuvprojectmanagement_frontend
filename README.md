@@ -23,3 +23,13 @@ To open local server in browser, open url
 localhost:5173/
 ```
 
+IMPORTANT :
+run 
+```bash
+npm i
+```
+after every pull to sync any dependency changes
+
+
+
+
