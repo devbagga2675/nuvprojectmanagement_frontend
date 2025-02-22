@@ -10,3 +10,5 @@ latest version of node
 cd "folder name"
 npm install //to install all the dependencies
 npm run dev //to run the app on localserver port 5173
+
+go to url "localhost:5173/" on any web browser on your device
