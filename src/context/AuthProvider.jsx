@@ -28,16 +28,14 @@ const AuthProvider = ({ children }) => {
       } else if (response.status === 404) {
         console.error("Login failed: Resource not found");
       } else {
-
         console.error("Login failed:", response.data);
       }
     } catch (error) {
       console.error("Login error:", error);
-
     }
   };
 
-  const logout = () => { 
+  const logout = () => {
     setIsLoggedIn(false);
     localStorage.setItem("isLoggedIn", "false");
     navigate("/signin");

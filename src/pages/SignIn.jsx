@@ -76,7 +76,7 @@ export default function SignIn() {
 
   
   return (
-    <> {/* Wrap with ThemeProvider */}
+    <> 
       <SignInContainer direction="column" justifyContent="center" alignItems="center"> {/* Centered content */}
         <Card variant="outlined">
           <Typography component="h1" variant="h4" sx={{ mb: 2, textAlign: 'left', fontWeight:'bold',  color: '#444444'}} fullWidth>
