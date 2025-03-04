@@ -5,9 +5,8 @@ const ProjectHeading = ({title}) => {
     <Typography
     variant="h6"
     sx={{
-      maxWidth: '200px',
+      maxWidth: '250px',
       fontWeight: 600,
-      marginBottom: 1,
       display: "-webkit-box",
       WebkitLineClamp: 2,
       WebkitBoxOrient: "vertical",

@@ -6,6 +6,7 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  Divider
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ProjectTag from "./ProjectTag";
@@ -48,9 +49,13 @@ function ProjectGroupCardSTU(props) {
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
         padding: 2,
         marginBottom: "10px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "8px"
       }}
       onClick={() => handleCardClick(id)} // Attach onClick to the Card
     >
+      
       <Box
         sx={{
           display: "flex",
@@ -75,7 +80,7 @@ function ProjectGroupCardSTU(props) {
       </Box>
 
       <ProjectHeading title={title} />
-
+      <Divider/>
       <Typography variant="body2" sx={{ marginBottom: 1 }}>
         Guide: {guide}
       </Typography>
