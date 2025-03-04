@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const useApi = (method, url, data = null) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
+  const api = axios.create({
+    baseURL: "BASE_URL",
+  });
   useEffect(() => {
     const fetchData = async () => {
-        console.log('hit')
+      console.log("hit");
       setIsLoading(true);
       try {
-        const api = axios.create({
-          baseURL: 'BASE_URL', 
-        });
+
 
         const response = await api({
           method: method.toLowerCase(),

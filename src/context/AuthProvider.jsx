@@ -15,24 +15,27 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const login = async (email, password) => {
-    try {
-      const response = await axios.post("/api/loginPost", {
-        user_email_address: email,
-        login_password: password,
-      });
+    setIsLoggedIn(true);
+    localStorage.setItem("isLoggedIn", "true");
+    navigate("/studentdashboard");
+    // try {
+    //   const response = await axios.post("/api/loginPost", {
+    //     user_email_address: email,
+    //     login_password: password,
+    //   });
 
-      if (response.data.Status === "SUCCESS") {
-        setIsLoggedIn(true);
-        localStorage.setItem("isLoggedIn", "true");
-        navigate("/homepage");
-      } else if (response.status === 404) {
-        console.error("Login failed: Resource not found");
-      } else {
-        console.error("Login failed:", response.data);
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-    }
+    //   if (response.data.Status === "SUCCESS") {
+    //     setIsLoggedIn(true);
+    //     localStorage.setItem("isLoggedIn", "true");
+    //     navigate("/studentdashboard");
+    //   } else if (response.status === 404) {
+    //     console.error("Login failed: Resource not found");
+    //   } else {
+    //     console.error("Login failed:", response.data);
+    //   }
+    // } catch (error) {
+    //   console.error("Login error:", error);
+    // }
   };
 
   const logout = () => {

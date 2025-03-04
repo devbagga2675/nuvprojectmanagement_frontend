@@ -30,7 +30,7 @@ const Card = styled(MuiCard)(({ theme }) => ({
 const SignInContainer = styled(Stack)(({ theme }) => ({
   maxHeight: '100vh', // Full viewport height
   minHeight: '100%',
-  padding: theme.spacing(0),
+  padding: theme.spacing(),
   [theme.breakpoints.up('sm')]: {
     padding: theme.spacing(4),
   },
@@ -76,7 +76,7 @@ export default function SignIn() {
 
   
   return (
-    <> 
+    <div style={{width:'100vw', height: '100vh', display:'flex', justifyContent: 'center', alignItems: 'center'}}> 
       <SignInContainer direction="column" justifyContent="center" alignItems="center"> {/* Centered content */}
         <Card variant="outlined">
           <Typography component="h1" variant="h4" sx={{ mb: 2, textAlign: 'left', fontWeight:'bold',  color: '#444444'}} fullWidth>
@@ -113,6 +113,6 @@ export default function SignIn() {
           </Box>
         </Card>
       </SignInContainer>
-    </>
+    </div>
   );
 }

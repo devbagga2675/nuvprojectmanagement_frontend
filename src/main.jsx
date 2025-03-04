@@ -5,12 +5,9 @@ import { ThemeProvider, createTheme } from "@mui/material/styles"; // Import The
 import CssBaseline from "@mui/material/CssBaseline";
 import App from "./App.jsx";
 
-const theme = createTheme();
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+    <CssBaseline />
+    <App />
   </StrictMode>
 );
